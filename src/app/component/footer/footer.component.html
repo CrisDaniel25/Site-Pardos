@@ -1,1 +1,24 @@
-<p>footer works!</p>
+<footer class="bg-light fixed-bottom text-center" style="background-color: transparent;">
+    <div class="container p-4 pb-0">
+      <section class="mb-4">
+            <a 
+                class="btn btn-primary btn-floating m-1 social-icon" 
+                href="https://www.instagram.com/pardos_sd"
+                target="_blank" 
+                style="background-color: #333333;"><i class="fab fa-instagram"></i>
+            </a>
+
+            <a 
+                class="btn btn-primary btn-floating m-1 social-icon" 
+                href="https://www.facebook.com/Pardos-Santo-Domingo-101152031895812/"
+                target="_blank"
+                style="background-color: #3b5998;"><i class="fab fa-facebook-f"></i>
+            </a>
+        </section>
+    </div>
+
+    <div class="text-center p-3">
+      © {{ CopyrightDate | date: 'yyyy' }} Copyright by
+      <a class="text-dark" href=""><strong>Pardos Santo Domingo</strong></a>
+    </div>
+  </footer>
