@@ -1,0 +1,15 @@
+.backgroup {
+    background-image: url('../assets/img/marc-olivier-jodoin-sI2Dz2dacGI-unsplash.jpg');
+    background-position: center;
+    height: 100vh;
+}
+
+.body {
+    flex-grow: 1;
+    margin-top:10%;
+    position: center;
+}
+  
+.footer {
+    flex-shrink: 0;
+}

@@ -4,7 +4,11 @@
 @import '~@fortawesome/fontawesome-free/css/all.css';
 
 html, body {
-    background-color: transparent;
+  font-family: 'Creo Extrabold', 'Blockletter', 'Calibri';
+}
+
+h1, h2, h3, h4, p, a {
+  color: white;
 }
 
 footer {

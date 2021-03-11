@@ -11,16 +11,19 @@
         <div class="collapse navbar-collapse" id="navbarContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item" [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{ exact: true }">
-                    <a class="nav-link" [routerLink]="['/']">Inicio</a>
+                    <a class="nav-link" [routerLink]="['/']"><i class="fas fa-home"></i>&nbsp;<span>Inicio</span></a>
                 </li>
                 <li class="nav-item" [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{ exact: true }">
-                    <a class="nav-link" [routerLink]="['/']">Nosotros</a>
+                    <a class="nav-link" [routerLink]="['/info']">Nosotros</a>
                 </li>
                 <li class="nav-item" [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{ exact: true }">
-                    <a class="nav-link" [routerLink]="['/']">Nuestro Equipo</a>
+                    <a class="nav-link" [routerLink]="['/team']"><i class="fas fa-users"></i>&nbsp;<span>Equipo</span></a>
                 </li>
                 <li class="nav-item" [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{ exact: true }">
-                    <a class="nav-link" [routerLink]="['/']">Nuestos Patrocinadores</a>
+                    <a class="nav-link" [routerLink]="['/sponsors']">Nuestos Patrocinadores</a>
+                </li>
+                <li class="nav-item" [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{ exact: true }">
+                    <a class="nav-link" [routerLink]="['/recruitment']">Reclutamiento</a>
                 </li>
             </ul>
         </div>
