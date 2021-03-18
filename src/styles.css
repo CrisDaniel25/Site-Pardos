@@ -4,7 +4,7 @@
 @import '~@fortawesome/fontawesome-free/css/all.css';
 
 html, body {
-  font-family: 'Creo Extrabold', 'Blockletter', 'Calibri';
+  font-family: 'Calibri', 'Helvetica';
 }
 
 h1, h2, h3, h4, p, a, li {

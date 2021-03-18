@@ -1,3 +1,7 @@
 a, li {
     color: white;
 }
+
+button span {
+    color: white;
+}
