@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-administration',
@@ -7,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdministrationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: Router) { }
 
   ngOnInit(): void {
+  }
+
+  GotoBlocManagement() {
+    this.route.navigate(['administration/bloc']);
+  }
+
+  GotoInfocManagement() {
+    this.route.navigate(['administration/info']);
+  }
+
+  GotoSponsorsManagement() {
+    this.route.navigate(['administration/team']);
+  }
+
+  GotoTeamManagement() {
+    this.route.navigate(['administration/sponsors']);
   }
 
 }

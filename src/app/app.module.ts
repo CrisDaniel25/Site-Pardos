@@ -1,7 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { JwtModule } from "@auth0/angular-jwt";
 
 import { AppRouting } from './app.routing';
 
@@ -15,6 +18,12 @@ import { SponsorsPageComponent } from './sponsors-page/sponsors-page.component';
 import { RecruitmentPageComponent } from './recruitment-page/recruitment-page.component';
 import { AdministrationComponent } from './administration/administration.component';
 import { LoginComponent } from './login/login.component';
+
+import { UsersService } from '../app/services/users/users.service';
+
+export function tokenGetter() {
+  return localStorage.getItem("jwt");
+}
 
 @NgModule({
   declarations: [
@@ -31,10 +40,13 @@ import { LoginComponent } from './login/login.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(AppRouting, {  useHash: true }),
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+    JwtModule.forRoot({ config: { tokenGetter: tokenGetter } })
   ],
-  providers: [],
+  providers: [UsersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

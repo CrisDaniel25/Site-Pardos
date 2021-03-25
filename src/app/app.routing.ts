@@ -7,12 +7,9 @@ import { RecruitmentPageComponent } from './recruitment-page/recruitment-page.co
 import { SponsorsPageComponent } from './sponsors-page/sponsors-page.component';
 import { TeamPageComponent } from './team-page/team-page.component';
 
+import { AuthguardService } from './services/auth-guard/authguard.service';
+
 export const AppRouting: Routes = [
-  {
-    path: "administration",
-    redirectTo: "administration",
-    pathMatch: "full"
-  },
   {
     path: "",
     component: HomeComponent,
@@ -40,8 +37,12 @@ export const AppRouting: Routes = [
   },
   {
     path: "",
-    component: AdministrationComponent,
+    //canActivate: [AuthGuardService],
     children: [
+      {
+        path: "menu/administration",
+        component: AdministrationComponent
+      },
       {
         path: "administration",
         loadChildren: () => import('./administration/administration.module').then(m => m.AdministrationModule)
