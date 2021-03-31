@@ -8,6 +8,8 @@ declare var $ : any;
 })
 export class NavbarComponent implements OnInit {
 
+  showOptionNavbar: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {

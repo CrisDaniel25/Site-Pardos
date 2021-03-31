@@ -9,6 +9,7 @@ import { BlocManagementComponent } from './content-management/bloc-management/bl
 import { InfoManagementComponent } from './content-management/info-management/info-management.component';
 import { TeamManagementComponent } from './content-management/team-management/team-management.component';
 import { SponsorsManagementComponent } from './content-management/sponsors-management/sponsors-management.component';
+import { UserManagementComponent } from './user-management/user-management.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { SponsorsManagementComponent } from './content-management/sponsors-manag
     BlocManagementComponent, 
     InfoManagementComponent, 
     TeamManagementComponent, 
-    SponsorsManagementComponent
+    SponsorsManagementComponent, 
+    UserManagementComponent
   ],
   imports: [
     CommonModule,

@@ -1,1 +1,51 @@
-<p class="text-center">info-management works!</p>
+<div class="container">
+    <button class="btn btn-outline-light btn-lg" id="back" (click)="BacktoMenu()">
+        <i class="fas fa-chevron-circle-left"></i>&nbsp;
+        <span>Volver</span>
+    </button>
+    <div class="main">
+        <div class="row">
+            <table class="table table-responsive table-hover">
+                <thead>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>ADS`</th>
+                    <th>
+                        <button class="btn btn-outline-light" data-toggle="modal" data-target="#form">
+                            <i class="fas fa-plus-circle"></i>&nbsp;
+                            <span>Nueva Noticia</span>
+                        </button>
+                    </th>
+                </thead>
+                <tbody>
+                    <td>1</td>
+                    <td>pablo</td>
+                    <td>dsfds</td>
+                    <td>
+                        <button class="btn btn-outline-warning">
+                            <i class="fas fa-pencil-alt"></i>
+                        </button>&nbsp;
+                        <button class="btn btn-outline-danger">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </td>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="form" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id=""></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      </div>
+    </div>
+  </div>
+</div>

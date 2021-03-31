@@ -21,12 +21,16 @@ export class AdministrationComponent implements OnInit {
     this.route.navigate(['administration/info']);
   }
 
-  GotoSponsorsManagement() {
+  GotoTeamManagement() {
     this.route.navigate(['administration/team']);
   }
 
-  GotoTeamManagement() {
+  GotoSponsorsManagement() {
     this.route.navigate(['administration/sponsors']);
+  }
+
+  GotoUserManagement() {
+    this.route.navigate(['administration/user']);
   }
 
 }

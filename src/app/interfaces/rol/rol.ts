@@ -1,4 +1,4 @@
 export interface IRol {
-    rolId: number;
-    name: string;
+    rolId: number,
+    name: string
 }

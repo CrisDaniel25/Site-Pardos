@@ -1,3 +1,192 @@
-<div class="container">
-    
+<div class="container"><br />
+    <div class="row">
+        <div class="col-sm-6">
+            <h3 class="text-center">Go Pardos Go</h3>
+            <form [formGroup]="RecruitmentForm">
+                <div class="form-group">
+                    <div class="form-group row">
+                        <div class="col-sm-6">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                  <div class="input-group-text bg-white">
+                                      <i class="fas fa-at"></i>
+                                  </div>
+                                </div>
+                                <input type="email" class="form-control" placeholder="Correo Electronico" required="required">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text bg-white">
+                                      <i class="fa fa-lock"></i>
+                                    </div>
+                                </div>
+                                  <input type="password" class="form-control" placeholder="Contraseña" required="required">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-group row">
+                        <div class="col-sm-6">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text bg-white">
+                                      <i class="fa fa-user"></i>
+                                    </div>
+                                  </div>
+                                <input type="text" class="form-control" placeholder="Nombres" required="required">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text bg-white">
+                                      <i class="fa fa-user"></i>
+                                    </div>
+                                  </div>
+                                <input type="text" class="form-control" placeholder="Apellidos" required="required">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-group row">
+                        <div class="col-sm-6">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text bg-white">
+                                        <i class="fas fa-phone"></i>
+                                    </div>
+                                  </div>
+                                <input type="tel" class="form-control" placeholder="Teléfono" required="required">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text bg-white">
+                                        <i class="fas fa-id-card"></i>
+                                    </div>
+                                  </div>
+                                <input type="text" class="form-control" placeholder="Cédula" required="required">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text bg-white">
+                                <i class="fas fa-football-ball"></i>
+                            </div>
+                        </div>
+                        <select class="custom-select">
+                            <option selected style="display: none;">Ha jugado anteriormente?</option>
+                            <option value="1">Si</option>
+                            <option value="2">No</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-group row">
+                        <div class="col-sm-6">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text bg-white">
+                                        <i class="fas fa-football-ball"></i>
+                                    </div>
+                                </div>
+                                <select class="custom-select">
+                                    <option selected style="display: none;">De que equipo jugara?</option>
+                                    <option value="1">Offensive Line</option>
+                                    <option value="2">Defensive Line</option>
+                                    <option value="2">Special Teams</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text bg-white">
+                                        <i class="fas fa-football-ball"></i>
+                                    </div>
+                                  </div>
+                                  <select class="custom-select">
+                                    <option selected style="display: none;">Posición de juego deseada</option>
+                                    <option value="1">Center (C)</option>
+                                    <option value="2">Offensive Guard (OG)</option>
+                                    <option value="3">Offensive Tackle (OT)</option>
+                                    <option value="3">Quarterback (QB)</option>
+                                    <option value="3">Running Back (HB/FB)</option>
+                                    <option value="3">Wide Receiver (WR)</option>
+                                    <option value="3">Tight End (TE)</option>
+                                    <option value="3">Defensive Tackle (DT)</option>
+                                    <option value="3">Defensive End (DE)</option>
+                                    <option value="3">Middle Linebacker (MLB)</option>
+                                    <option value="3">Outside Linebacker (OLB)</option>
+                                    <option value="3">Cornerback (CB)</option>
+                                    <option value="3">Safety (S)</option>
+                                    <option value="3">Nickelback and Dimeback</option>
+                                    <option value="3">Kicker (K)</option>
+                                    <option value="3">Kickoff Specialist (KOS)</option>
+                                    <option value="3">Punter (P)</option>
+                                  </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text bg-white">
+                                <i class="fas fa-file"></i>
+                            </div>
+                        </div>
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="customFileLangHTML">
+                            <label class="custom-file-label" for="customFileLangHTML" data-browse="Elegir archivo">Certificado de Buena Conducta</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer col-sm-auto">
+                    <div class="col-sm-5">
+                        <a class="nav-link text-white" href="https://myaccount.google.com/intro/security">
+                            Para enviar la 
+                        </a>
+                    </div>
+                    <div class="col-sm-5">
+                        <button class="btn btn-outline-light btn-lg" type="submit">
+                            <span>Enviar solictud</span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-lg-6 col-md-6">
+            <div class="row">
+                <iframe src="https://www.youtube.com/embed/Gt6NsqMbByo?autoplay=1&mute=1"></iframe>
+            </div>
+            <div class="row">
+                <h2>Pedro</h2>
+                <div class="map-responsive">
+                    <!-- <google-map
+                    height="250px"
+                    width="100%"
+                    [zoom]="zoom"
+                    [center]="center"
+                    [options]="options"
+                    ></google-map> -->
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

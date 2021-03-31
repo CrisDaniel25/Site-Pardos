@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { environment } from '../../../environments/environment'
+import { environment } from '../../../environments/environment';
 import { IUsers } from '../../interfaces/users/users';
 import { ILogin } from '../../interfaces/login/login';
-import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -24,7 +24,7 @@ export class UsersService {
     return this.http.get<IUsers[]>(this.BASE_URL_API + "/Authentication");
   }
 
-  CreateNewUser(UserObject: IUsers): Observable<IUsers[]> {
+  CreateNewUser(UserObject): Observable<IUsers[]> {
     return this.http.post<IUsers[]>(this.BASE_URL_API + "/Authentication/Register/User", UserObject, this.httpOptions);
   }
   

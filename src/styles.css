@@ -3,8 +3,16 @@
 @import '~font-awesome/css/font-awesome.css';
 @import '~@fortawesome/fontawesome-free/css/all.css';
 
-html, body {
+html {
   font-family: 'Calibri', 'Helvetica';
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background-image: url('assets/img/marc-olivier-jodoin-sI2Dz2dacGI-unsplash.jpg');
+  background-position: center;
+  height: 100vh;
 }
 
 h1, h2, h3, h4, h5, h6, p, a, li {

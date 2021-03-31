@@ -1,11 +1,11 @@
 import { IRol } from '../rol/rol';
 
 export interface IUsers {
-    userId: number;
+    userId: number,
     name: string,
     lastname: string,
     username: string,
     passcode: string,
-    fechaRegistro: Date,
+    registration_date: Date,
     rol: IRol
 }

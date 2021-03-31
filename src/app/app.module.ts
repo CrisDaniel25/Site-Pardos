@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { JwtModule } from "@auth0/angular-jwt";
+import { GoogleMapsModule } from '@angular/google-maps'
 
 import { AppRouting } from './app.routing';
 
@@ -42,6 +43,7 @@ export function tokenGetter() {
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
+    GoogleMapsModule,
     RouterModule.forRoot(AppRouting, {  useHash: true }),
     MDBBootstrapModule.forRoot(),
     JwtModule.forRoot({ config: { tokenGetter: tokenGetter } })

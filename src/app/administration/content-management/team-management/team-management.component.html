@@ -1,1 +1,161 @@
-<p>team-management works!</p>
+<div class="container">
+    <button class="btn btn-outline-light btn-lg" id="back" (click)="BacktoMenu()">
+        <i class="fas fa-chevron-circle-left"></i>&nbsp;
+        <span>Volver</span>
+    </button>
+    <div class="row">
+        <div class="col-sm-6">
+            <h3 class="text-center">¡ Go Pardos Go !</h3>
+            <form [formGroup]="TeamForm">
+                <div class="form-group">
+                    <div class="form-group row">
+                        <div class="col-sm-6">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                  <div class="input-group-text bg-white">
+                                    <i class="fa fa-user"></i>
+                                  </div>
+                                </div>
+                                <input type="text" class="form-control" placeholder="Nombre" formControlName="name">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text bg-white">
+                                        <i class="fa fa-user"></i>
+                                    </div>
+                                </div>
+                                  <input type="text" class="form-control" placeholder="Apellido" formControlName="lastname">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-group row">
+                        <div class="col-sm-6">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                  <div class="input-group-text bg-white">
+                                    <i class="fa fa-user"></i>
+                                  </div>
+                                </div>
+                                <input type="text" class="form-control" placeholder="Peso (kg)" formControlName="weight">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text bg-white">
+                                        <i class="fa fa-user"></i>
+                                    </div>
+                                </div>
+                                  <input type="text" class="form-control" placeholder="Altura (m)" formControlName="height">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <h5 for="exampleFormControlTextarea1">Descripción</h5>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"
+                    formControlName="description"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-group row">
+                        <div class="col-sm-6">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                  <div class="input-group-text bg-white">
+                                    <i class="fas fa-heading"></i>
+                                  </div>
+                                </div>
+                                <select class="custom-select">
+                                    <option selected style="display: none;">Posiciones</option>
+                                    <option formControlName="positionId"
+                                        *ngFor="let position of PositionList" 
+                                        [ngValue]="position.positionId">
+                                        {{position.fullname}}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text bg-white">
+                                        <i class="fas fa-file"></i>
+                                    </div>
+                                </div>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="customFileLangHTML">
+                                    <label class="custom-file-label" for="customFileLangHTML" data-browse="Elegir perfil">Imagen</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="modal-footer col-sm-auto">
+                    <div class="col-sm-auto">
+                        <button class="btn btn-outline-danger" (click)="onClearForm()">
+                          <i class="fas fa-times"></i>&nbsp;<span>Borrar</span>
+                        </button>
+                      </div>
+                      <div class="col-sm-auto">
+                        <button class="btn btn-outline-success" (click)="onCreateTeam()">
+                          <i class="fas fa-check"></i>&nbsp;<span>Crear</span>
+                        </button>
+                      </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-lg-5 col-md-5">
+            <div class="main">
+                <div class="row">
+                    <table class="table table-responsive table-hover">
+                        <thead>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Apellido</th>
+                            <th scope="col">Peso</th>
+                            <th scope="col">Estatura</th>
+                            <th scope="col">Posicion</th>
+                            <th scope="col">Foto Perfil</th>
+                            <th scope="col">Descripcion</th>
+                            <th scope="col">Fecha Registro</th>
+                            <th></th>
+                            <th></th>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let player of TeamList">
+                                <td>{{player.playerId}}</td>
+                                <td>{{player.name}}</td>
+                                <td>{{player.lastname}}</td>
+                                <td>{{player.weight}}</td>
+                                <td>{{player.height}}</td>
+                                <td>{{player.positions.initial}}</td>
+                                <td>{{player.profile_picture}}</td>
+                                <td>{{player.description}}</td>
+                                <td>{{player.registration_date | date}}</td>
+                                <td>
+                                    <button class="btn btn-outline-danger" (click)="onDeleteTeam(player.playerId)">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-outline-warning">
+                                        <i class="fas fa-pen"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
