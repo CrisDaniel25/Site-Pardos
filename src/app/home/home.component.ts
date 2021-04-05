@@ -13,6 +13,10 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  scrollToInfo(element: any) {
+    element.scrollIntoView({ behavior: "smooth" });
+  }
+
 }
 
 $('#recipeCarousel').carousel({

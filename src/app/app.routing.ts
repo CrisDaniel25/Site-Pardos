@@ -6,6 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { RecruitmentPageComponent } from './recruitment-page/recruitment-page.component';
 import { SponsorsPageComponent } from './sponsors-page/sponsors-page.component';
 import { TeamPageComponent } from './team-page/team-page.component';
+import { RequirementsComponent } from './requirements/requirements.component';
 
 import { AuthguardService } from './services/auth-guard/authguard.service';
 
@@ -14,6 +15,10 @@ export const AppRouting: Routes = [
     path: "",
     component: HomeComponent,
     pathMatch: "full"
+  },
+  {
+    path: "requirements",
+    component: RequirementsComponent
   },
   {
     path: "info",

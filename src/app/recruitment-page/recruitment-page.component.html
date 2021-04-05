@@ -1,7 +1,7 @@
 <div class="container"><br />
     <div class="row">
         <div class="col-sm-6">
-            <h3 class="text-center">Go Pardos Go</h3>
+            <h3 class="text-center">¡ Go Pardos Go !</h3>
             <form [formGroup]="RecruitmentForm">
                 <div class="form-group">
                     <div class="form-group row">
@@ -157,13 +157,14 @@
                 </div>
 
                 <div class="modal-footer col-sm-auto">
-                    <div class="col-sm-5">
-                        <a class="nav-link text-white" href="https://myaccount.google.com/intro/security">
-                            Para enviar la 
+                    <div class="col-sm-auto">
+                        <a class="nav-link text-white" [routerLink]="['/requirements']">
+                            <strong>Re</strong>
                         </a>
                     </div>
-                    <div class="col-sm-5">
+                    <div class="col-sm-auto">
                         <button class="btn btn-outline-light btn-lg" type="submit">
+                            <i class="fas fa-paper-plane"></i>&nbsp;
                             <span>Enviar solictud</span>
                         </button>
                     </div>
@@ -173,18 +174,17 @@
 
         <div class="col-lg-6 col-md-6">
             <div class="row">
-                <iframe src="https://www.youtube.com/embed/Gt6NsqMbByo?autoplay=1&mute=1"></iframe>
+                <iframe src="https://www.youtube.com/embed/UiYHR608jD0"></iframe>
             </div>
             <div class="row">
-                <h2>Pedro</h2>
                 <div class="map-responsive">
-                    <!-- <google-map
+                    <google-map
                     height="250px"
                     width="100%"
                     [zoom]="zoom"
                     [center]="center"
                     [options]="options"
-                    ></google-map> -->
+                    ></google-map>
                 </div>
             </div>
         </div>

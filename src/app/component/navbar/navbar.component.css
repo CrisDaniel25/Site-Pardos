@@ -1,5 +1,11 @@
 a, li {
+    font-family: 'Segoe UI';
+    font-weight: bold;
     color: white;
+}
+
+nav {
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 button span {

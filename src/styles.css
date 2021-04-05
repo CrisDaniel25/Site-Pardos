@@ -4,7 +4,6 @@
 @import '~@fortawesome/fontawesome-free/css/all.css';
 
 html {
-  font-family: 'Calibri', 'Helvetica';
   height: 100%;
   margin: 0;
 }
@@ -15,14 +14,14 @@ body {
   height: 100vh;
 }
 
-h1, h2, h3, h4, h5, h6, p, a, li {
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Segoe UI';
+  font-weight: bold;
   color: white;
 }
 
-footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
+p, a, li, span {
+  font-family: 'Segoe UI';
+  font-weight: normal;
+  color: white;
 }

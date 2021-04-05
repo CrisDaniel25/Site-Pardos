@@ -21,6 +21,7 @@ import { AdministrationComponent } from './administration/administration.compone
 import { LoginComponent } from './login/login.component';
 
 import { UsersService } from '../app/services/users/users.service';
+import { RequirementsComponent } from './requirements/requirements.component';
 
 export function tokenGetter() {
   return localStorage.getItem("jwt");
@@ -37,7 +38,8 @@ export function tokenGetter() {
     SponsorsPageComponent,
     RecruitmentPageComponent,
     AdministrationComponent,
-    LoginComponent
+    LoginComponent,
+    RequirementsComponent
   ],
   imports: [
     BrowserModule,

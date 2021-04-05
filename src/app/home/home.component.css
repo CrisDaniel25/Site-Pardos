@@ -1,3 +1,23 @@
+section {
+    margin-top: 20%;
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.5);
+    /* opacity: 10%; */
+}
+
+.col-sm {
+    margin-left: 5%;
+}
+
+.main{
+    width: 50%;
+    height: auto;
+    margin: 0 auto;
+    padding: 10%;
+}
+
 .tittle-caption {
     color: rgb(217, 89, 0);
 }

@@ -1,28 +1,28 @@
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: transparent;">
+<nav class="navbar navbar-expand-lg navbar-light">
     <div class="container-fluid">
         <a class="navbar-brand mb-0 h1 text-white" href="">
-            <img src="../../../assets/icon/Blanco.svg" alt="" />
+            <img src="../../../assets/icon/Blanco.svg" alt="" width="60%" height="60%" />
         </a>
         <button class="navbar-toggler" (click)="openMenuBar()">
             <span><i class="fa fa-navicon" style="color:#fff; font-size:28px;"></i></span>
         </button>
-        <div class="col-lg-5"></div>
+        <div class="col-lg-4"></div>
         <div class="collapse navbar-collapse" id="navbarContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item" [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{ exact: true }">
-                    <a class="nav-link text-white" [routerLink]="['/']"><span>Inicio</span></a>
+                    <a class="nav-link text-white text-center" [routerLink]="['/']"><span>INICIO</span></a>
                 </li>
                 <li class="nav-item" [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{ exact: true }">
-                    <a class="nav-link text-white" [routerLink]="['/info']"><span>Nosotros</span></a>
+                    <a class="nav-link text-white text-center" [routerLink]="['/info']"><span>NOSOTROS</span></a>
                 </li>
                 <li class="nav-item" [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{ exact: true }">
-                    <a class="nav-link text-white" [routerLink]="['/team']"><span>Equipo</span></a>
+                    <a class="nav-link text-white text-center" [routerLink]="['/team']"><span>EQUIPO</span></a>
                 </li>
                 <li class="nav-item" [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{ exact: true }">
-                    <a class="nav-link text-white" [routerLink]="['/sponsors']"><span>Patrocinadores</span></a>
+                    <a class="nav-link text-white text-center" [routerLink]="['/sponsors']"><span>PATROCINADORES</span></a>
                 </li>
                 <li class="nav-item" [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{ exact: true }">
-                    <a class="nav-link text-white" [routerLink]="['/recruitment']"><span>Unete a Pardos</span></a>
+                    <a class="nav-link text-white text-center" [routerLink]="['/recruitment']"><span>UNIRSE A PARDOS</span></a>
                 </li>
                 <li class="nav-item dropdown" *ngIf="showOptionNavbar">
                     <a class="nav-link dropdown-toggle text-white" href="#" id="navbarScrollingDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
@@ -44,6 +44,29 @@
                     </ul>
                 </li> -->
             </ul>
+            <div class="btn-wrapper profile">
+                <a
+                  class="btn btn-icon btn-neutral btn-round btn-simple mr-1"
+                  href="https://www.youtube.com/channel/UC_qlEQYwytu8J38V8D3X_rg"
+                  target="_blank"
+                >
+                  <i class="fab fa-youtube"> </i>
+                </a>
+                <a
+                  class="btn btn-icon btn-neutral btn-round btn-simple mr-1"
+                  href="https://www.facebook.com/Pardos-Santo-Domingo-101152031895812"
+                  target="_blank"
+                >
+                  <i class="fab fa-facebook-square"> </i>
+                </a>
+                <a
+                  class="btn btn-icon btn-neutral btn-round btn-simple"
+                  href="https://www.instagram.com/pardos_sd"
+                  target="_blank"
+                >
+                  <i class="fab fa-instagram"> </i>
+                </a>
+            </div>
         </div>
     </div>
 </nav>
