@@ -1,3 +1,40 @@
+hr {
+    background-color: white;
+}
+
+.container-fluid {
+    width: 95%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* opacity: 10%; */
+}
+
+.tittle {
+    width: 15%;
+}
+
+.commitment {
+    margin-top: 1%;
+}
+
 #div-3 ul {
     margin-left: 30%;
+}
+
+#div-1 {
+    border: 1px solid white;
+}
+
+#div-2 {
+    margin-left: 2%;
+    border: 1px solid white;
+}
+
+#div-3 {
+    margin-left: 2%;
+    border: 1px solid white;
+}
+
+#div-4 {
+    margin-top: 3%;
+    border: 1px solid white;
 }

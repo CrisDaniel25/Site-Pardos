@@ -1,96 +1,99 @@
-<div class="container">
-    <button class="btn btn-outline-light btn-lg" id="back" (click)="BacktoMenu()">
-        <i class="fas fa-chevron-circle-left"></i>&nbsp;
-        <span>Volver</span>
-    </button>
-    <div class="row">
-        <div class="col-sm-6">
-            <h3 class="text-center">¡ Go Pardos Go !</h3>
-            <form [formGroup]="BlocForm">
-                <div class="form-group">
-                    <div class="form-group row">
-                        <div class="col-sm-6">
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                  <div class="input-group-text bg-white">
-                                    <i class="fas fa-heading"></i>
-                                  </div>
-                                </div>
-                                <input type="text" class="form-control" placeholder="Titulo" formControlName="tittle">
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text bg-white">
-                                        <i class="fas fa-file"></i>
+<br />
+<div class="container-fluid">
+    <div class="container"><br />
+        <button class="btn btn-outline-light btn-lg" id="back" (click)="BacktoMenu()">
+            <i class="fas fa-chevron-circle-left"></i>&nbsp;
+            Volver
+        </button>
+        <div class="row">
+            <div class="col-sm-6">
+                <h3 class="text-center">¡GO PARDOS GO!</h3>
+                <form [formGroup]="BlocForm">
+                    <div class="form-group">
+                        <div class="form-group row">
+                            <div class="col-sm-6">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                      <div class="input-group-text bg-white">
+                                        <i class="fas fa-heading"></i>
+                                      </div>
                                     </div>
+                                    <input type="text" class="form-control" placeholder="Titulo" formControlName="tittle">
                                 </div>
-                                <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="customFileLangHTML">
-                                    <label class="custom-file-label text-dark" for="customFileLangHTML" data-browse="Elegir portada">Imagen</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text bg-white">
+                                            <i class="fas fa-file"></i>
+                                        </div>
+                                    </div>
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="customFileLangHTML">
+                                        <label class="custom-file-label text-dark" for="customFileLangHTML" data-browse="Elegir portada">Imagen</label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="form-group">
-                    <h5 for="exampleFormControlTextarea1">Contenido del articulo</h5>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"
-                    formControlName="content"></textarea>
-                </div>
-
-                <div class="modal-footer col-sm-auto">
-                    <div class="col-sm-auto">
-                        <button class="btn btn-outline-danger" (click)="onClearForm()">
-                          <i class="fas fa-times"></i>&nbsp;<span>Borrar</span>
-                        </button>
-                      </div>
-                      <div class="col-sm-auto">
-                        <button class="btn btn-outline-success" (click)="onCreateBloc()">
-                          <i class="fas fa-check"></i>&nbsp;<span>Crear</span>
-                        </button>
-                      </div>
-                </div>
-            </form>
-        </div>
-
-        <div class="col-lg-5 col-md-5">
-            <div class="main">
-                <div class="row">
-                    <table class="table table-responsive table-hover">
-                        <thead>
-                            <th scope="col">Ver Contenido</th>
-                            <th scope="col">Fecha Registro</th>
-                            <th></th>
-                            <th></th>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor="let bloc of BlocList">
-                                <td>
-                                    <button class="btn btn-outline-light" data-toggle="modal">
-                                        <i class="fas fa-eye"></i>
-                                    </button>
-                                </td>
-                                <td>{{bloc.registration_date | date}}</td>
-                                <td>
-                                    <button class="btn btn-outline-danger" (click)="onDeleteBloc(bloc.blocId)">
-                                        <i class="fas fa-trash-alt"></i>
-                                    </button>
-                                </td>
-                                <td>
-                                    <button class="btn btn-outline-warning">
-                                        <i class="fas fa-pen"></i>
-                                    </button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+    
+                    <div class="form-group">
+                        <h5 for="exampleFormControlTextarea1">Contenido del articulo</h5>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"
+                        formControlName="content"></textarea>
+                    </div>
+    
+                    <div class="modal-footer col-sm-auto">
+                        <div class="col-sm-auto">
+                            <button class="btn btn-outline-danger" (click)="onClearForm()">
+                              <i class="fas fa-times"></i>&nbsp;<span>Borrar</span>
+                            </button>
+                          </div>
+                          <div class="col-sm-auto">
+                            <button class="btn btn-outline-success" (click)="onCreateBloc()">
+                              <i class="fas fa-check"></i>&nbsp;<span>Crear</span>
+                            </button>
+                          </div>
+                    </div>
+                </form>
+            </div>
+    
+            <div class="col-lg-5 col-md-5">
+                <div class="main">
+                    <div class="row">
+                        <table class="table table-responsive table-hover">
+                            <thead>
+                                <th scope="col">Ver Contenido</th>
+                                <th scope="col">Fecha Registro</th>
+                                <th></th>
+                                <th></th>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let bloc of BlocList">
+                                    <td>
+                                        <button class="btn btn-outline-light" data-toggle="modal">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </td>
+                                    <td>{{bloc.registration_date | date}}</td>
+                                    <td>
+                                        <button class="btn btn-outline-danger" (click)="onDeleteBloc(bloc.blocId)">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-outline-warning">
+                                            <i class="fas fa-pen"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </div><br /><br /><br /><br />
 </div>
 
 <div *ngFor="let bloc of BlocList">

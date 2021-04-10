@@ -11,6 +11,20 @@ th, td, a, label, h6 {
     color: white;
 }
 
+hr {
+    background-color: white;
+}
+
+.container-fluid {
+    width: 95%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* opacity: 10%; */
+}
+
+.tittle {
+    width: 15%;
+}
+
 #back {
     margin-top: 5%;
 }

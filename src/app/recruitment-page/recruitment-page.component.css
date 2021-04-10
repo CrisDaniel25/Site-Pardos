@@ -1,0 +1,17 @@
+hr {
+    background-color: white;
+}
+
+.container-fluid {
+    width: 95%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* opacity: 10%; */
+}
+
+.tittle {
+    width: 15%;
+}
+
+.second-tittle {
+    width: 65%;
+}

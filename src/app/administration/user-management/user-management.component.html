@@ -1,122 +1,125 @@
-<div class="container">
-    <button class="btn btn-outline-light btn-lg" id="back" (click)="BacktoMenu()">
-        <i class="fas fa-chevron-circle-left"></i>&nbsp;
-        <span>Volver</span>
-    </button>
-    <div class="row">
-        <div class="col-sm-6">
-            <h3 class="text-center">¡ Go Pardos Go !</h3>
-            <form [formGroup]="UserForm">
-                <div class="form-group">
-                    <div class="form-group row">
-                        <div class="col-sm-6">
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                  <div class="input-group-text bg-white">
-                                    <i class="fa fa-user"></i>
-                                  </div>
-                                </div>
-                                <input type="text" class="form-control" placeholder="Nombres" formControlName="name">
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text bg-white">
+<br />
+<div class="container-fluid">
+    <div class="container"><br />
+        <button class="btn btn-outline-light btn-lg" id="back" (click)="BacktoMenu()">
+            <i class="fas fa-chevron-circle-left"></i>&nbsp;
+            Volver
+        </button>
+        <div class="row">
+            <div class="col-sm-6">
+                <h3 class="text-center">¡GO PARDOS GO!</h3>
+                <form [formGroup]="UserForm">
+                    <div class="form-group">
+                        <div class="form-group row">
+                            <div class="col-sm-6">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                      <div class="input-group-text bg-white">
                                         <i class="fa fa-user"></i>
+                                      </div>
                                     </div>
+                                    <input type="text" class="form-control" placeholder="Nombres" formControlName="name">
                                 </div>
-                                  <input type="text" class="form-control" placeholder="Apellidos" formControlName="lastname">
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text bg-white">
+                                            <i class="fa fa-user"></i>
+                                        </div>
+                                    </div>
+                                      <input type="text" class="form-control" placeholder="Apellidos" formControlName="lastname">
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="form-group row">
-                        <div class="col-sm-6">
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                  <div class="input-group-text bg-white">
-                                    <i class="fa fa-user"></i>
-                                  </div>
-                                </div>
-                                <input type="text" class="form-control" placeholder="Nombre Usuario" formControlName="username">
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text bg-white">
-                                      <i class="fa fa-lock"></i>
+    
+                    <div class="form-group">
+                        <div class="form-group row">
+                            <div class="col-sm-6">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                      <div class="input-group-text bg-white">
+                                        <i class="fa fa-user"></i>
+                                      </div>
                                     </div>
+                                    <input type="text" class="form-control" placeholder="Nombre Usuario" formControlName="username">
                                 </div>
-                                  <input type="text" class="form-control" placeholder="Contraseña" formControlName="passcode">
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text bg-white">
+                                          <i class="fa fa-lock"></i>
+                                        </div>
+                                    </div>
+                                      <input type="text" class="form-control" placeholder="Contraseña" formControlName="passcode">
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <!-- <div class="form-group">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text bg-white">
-                            <i class="fas fa-user-tag"></i>
+    
+                    <!-- <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                              <div class="input-group-text bg-white">
+                                <i class="fas fa-user-tag"></i>
+                              </div>
+                            </div>
+                            <select class="custom-select" formControlName="rolId" >
+                                <option selected style="display: none;">Rol</option>
+                                <option *ngFor="let rol of RolList" [ngValue]="rol.rolId">{{rol.name}}</option>
+                            </select>
+                        </div>
+                    </div> -->
+    
+                    <div class="modal-footer col-sm-auto">
+                        <div class="col-sm-auto">
+                            <button class="btn btn-outline-danger" (click)="onClearForm()">
+                              <i class="fas fa-times"></i>&nbsp;<span>Borrar</span>
+                            </button>
                           </div>
-                        </div>
-                        <select class="custom-select" formControlName="rolId" >
-                            <option selected style="display: none;">Rol</option>
-                            <option *ngFor="let rol of RolList" [ngValue]="rol.rolId">{{rol.name}}</option>
-                        </select>
+                          <div class="col-sm-auto">
+                            <button class="btn btn-outline-success" (click)="onCreateUser()">
+                              <i class="fas fa-check"></i>&nbsp;<span>Crear</span>
+                            </button>
+                          </div>
                     </div>
-                </div> -->
-
-                <div class="modal-footer col-sm-auto">
-                    <div class="col-sm-auto">
-                        <button class="btn btn-outline-danger" (click)="onClearForm()">
-                          <i class="fas fa-times"></i>&nbsp;<span>Borrar</span>
-                        </button>
-                      </div>
-                      <div class="col-sm-auto">
-                        <button class="btn btn-outline-success" (click)="onCreateUser()">
-                          <i class="fas fa-check"></i>&nbsp;<span>Crear</span>
-                        </button>
-                      </div>
-                </div>
-            </form>
-        </div>
-
-        <div class="col-lg-5 col-md-5">
-            <div class="main">
-                <div class="row">
-                    <table class="table table-responsive table-hover">
-                        <thead>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Apellido</th>
-                            <th scope="col">Nombre Usuario</th>
-                            <th scope="col">Contraseña</th>
-                            <th scope="col">Rol</th>
-                            <th scope="col">Fecha Registro</th>
-                            <th></th>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor="let user of UserList">
-                                <td>{{user.name}}</td>
-                                <td>{{user.lastname}}</td>
-                                <td>{{user.username}}</td>
-                                <td>{{user.passcode}}</td>
-                                <td>{{user.rol.name}}</td>
-                                <td>{{user.registration_date | date}}</td>
-                                <td>
-                                    <button class="btn btn-outline-danger" (click)="onDeleteUser(user.userId)">
-                                        <i class="fas fa-trash-alt"></i>
-                                    </button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                </form>
+            </div>
+    
+            <div class="col-lg-5 col-md-5">
+                <div class="main">
+                    <div class="row">
+                        <table class="table table-responsive table-hover">
+                            <thead>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Apellido</th>
+                                <th scope="col">Nombre Usuario</th>
+                                <th scope="col">Contraseña</th>
+                                <th scope="col">Rol</th>
+                                <th scope="col">Fecha Registro</th>
+                                <th></th>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let user of UserList">
+                                    <td>{{user.name}}</td>
+                                    <td>{{user.lastname}}</td>
+                                    <td>{{user.username}}</td>
+                                    <td>{{user.passcode}}</td>
+                                    <td>{{user.rol.name}}</td>
+                                    <td>{{user.registration_date | date}}</td>
+                                    <td>
+                                        <button class="btn btn-outline-danger" (click)="onDeleteUser(user.userId)">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </div><br /><br /><br /><br />
 </div>
