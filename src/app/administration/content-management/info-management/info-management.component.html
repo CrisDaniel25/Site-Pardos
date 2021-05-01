@@ -1,54 +1,105 @@
 <br />
 <div class="container-fluid">
+    <h3 class="text-center">NOSOTROS</h3><hr class="tittle">
     <div class="container"><br />
         <button class="btn btn-outline-light btn-lg" id="back" (click)="BacktoMenu()">
             <i class="fas fa-chevron-circle-left"></i>&nbsp;
             Volver
         </button>
-        <div class="main">
-            <div class="row">
-                <table class="table table-responsive table-hover">
-                    <thead>
-                        <th>ID</th>
-                        <th>Nombre</th>
-                        <th>ADS`</th>
-                        <th>
-                            <button class="btn btn-outline-light" data-toggle="modal" data-target="#form">
-                                <i class="fas fa-plus-circle"></i>&nbsp;
-                                <span>Nueva Noticia</span>
-                            </button>
-                        </th>
-                    </thead>
-                    <tbody>
-                        <td>1</td>
-                        <td>pablo</td>
-                        <td>dsfds</td>
-                        <td>
-                            <button class="btn btn-outline-warning">
-                                <i class="fas fa-pencil-alt"></i>
-                            </button>&nbsp;
+        <div class="row">
+            <div class="col-sm-6">
+                <h3 class="text-center">¡GO PARDOS GO!</h3><hr />
+                <form [formGroup]="InfoForm">                    
+                    <div class="form-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text bg-white">
+                                <i class="fas fa-file"></i>
+                            </div>
+                        </div>
+                        <div class="custom-file">
+                            <input #fileInput type="file" class="custom-file-input" 
+                                (change)="onSelectFile($event)"
+                                accept=".jpg,.png,.jpeg,.mp4,.gif"
+                            >
+                            <label class="custom-file-label text-dark" data-browse="Elegir portada">Imagen</label>
+                        </div>
+                    </div>
+    
+                    <div class="modal-footer col-sm-auto">
+                        <div class="col-sm-auto">
                             <button class="btn btn-outline-danger">
-                                <i class="fas fa-trash-alt"></i>
+                              <i class="fas fa-times"></i>&nbsp;<span>Borrar</span>
                             </button>
-                        </td>
-                    </tbody>
-                </table>
+                          </div>
+                          <div class="col-sm-auto">
+                            <button class="btn btn-outline-success">
+                              <i class="fas fa-check"></i>&nbsp;<span>Crear</span>
+                            </button>
+                          </div>
+                    </div>
+                </form>
+            </div>
+    
+            <div class="col-lg-5 col-md-5">
+                <div class="main">
+                    <div class="row">
+                        <table class="table table-responsive table-hover">
+                            <thead>
+                                <th scope="col">Ver Imagen</th>
+                                <th scope="col">Fecha Registro</th>
+                                <th></th>
+                                <th></th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <button class="btn btn-outline-light">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <button class="btn btn-outline-danger">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-outline-warning">
+                                            <i class="fas fa-pen"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
     </div><br /><br /><br /><br />
 </div>
 
-<div class="modal fade" id="form" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id=""></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-      </div>
+<div>
+    <div class="modal fade" id="BlocDetails{{1}}" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <!-- <h5 class="modal-title text-dark" id="staticBackdropLabel">{{bloc.tittle}}</h5> -->
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span class="text-dark" aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="row"> 
+                <div class="col-sm-6">
+                </div>
+                <div class="col-sm-5">
+                  <p class="text-dark">
+                    <!-- {{bloc.content}} -->
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
-  </div>
 </div>

@@ -16,6 +16,10 @@ button {
     width: 15%;
 }
 
+.bottom {
+    width: 75%;
+}
+
 .cards-wrapper {
     display: flex;
     flex-direction: column;

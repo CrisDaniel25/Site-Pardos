@@ -1,5 +1,6 @@
 <br />
 <div class="container-fluid">
+    <h3 class="text-center">EQUIPO</h3><hr class="tittle">
     <div class="container"><br />
         <button class="btn btn-outline-light btn-lg" id="back" (click)="BacktoMenu()">
             <i class="fas fa-chevron-circle-left"></i>&nbsp;
@@ -7,7 +8,7 @@
         </button>
         <div class="row">
             <div class="col-sm-6">
-                <h3 class="text-center">¡GO PARDOS GO!</h3>
+                <h3 class="text-center">¡GO PARDOS GO!</h3><hr />
                 <form [formGroup]="TeamForm">
                     <div class="form-group">
                         <div class="form-group row">
@@ -43,7 +44,7 @@
                                         <i class="fa fa-user"></i>
                                       </div>
                                     </div>
-                                    <input type="text" class="form-control" placeholder="Peso (kg)" formControlName="weight">
+                                    <input type="text" class="form-control" placeholder="Peso (lb)" formControlName="weight">
                                 </div>
                             </div>
                             <div class="col-sm-6">
@@ -53,7 +54,7 @@
                                             <i class="fa fa-user"></i>
                                         </div>
                                     </div>
-                                      <input type="text" class="form-control" placeholder="Altura (m)" formControlName="height">
+                                    <input type="text" class="form-control" placeholder="Altura (cm)" formControlName="height">
                                 </div>
                             </div>
                         </div>
@@ -64,42 +65,88 @@
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"
                         formControlName="description"></textarea>
                     </div>
-    
+
                     <div class="form-group">
                         <div class="form-group row">
                             <div class="col-sm-6">
+                                <h6 class="text-white">Este jugador está activo?</h6>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                       <div class="input-group-text bg-white">
-                                        <i class="fas fa-heading"></i>
+                                        <i class="fas fa-toggle-on"></i>
                                       </div>
                                     </div>
-                                    <select class="custom-select">
-                                        <option selected style="display: none;">Posiciones</option>
-                                        <option formControlName="positionId"
-                                            *ngFor="let position of PositionList" 
-                                            [ngValue]="position.positionId">
-                                            {{position.fullname}}
-                                        </option>
+                                    <select class="custom-select" formControlName="active">
+                                        <option class="text-dark" [ngValue]="true">Si</option>
+                                        <option class="text-dark" [ngValue]="false">No</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-sm-6">
+                                <h6 class="text-white">Este jugador es capitán?</h6>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text bg-white">
-                                            <i class="fas fa-file"></i>
+                                            <i class="fas fa-crown"></i>
                                         </div>
                                     </div>
-                                    <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="customFileLangHTML">
-                                        <label class="custom-file-label" for="customFileLangHTML" data-browse="Elegir perfil">Imagen</label>
-                                    </div>
+                                    <select class="custom-select" formControlName="captain">
+                                        <option class="text-dark" [ngValue]="true">Si</option>
+                                        <option class="text-dark" [ngValue]="false">No</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
                     </div>
     
+                    <div class="form-group">
+                        <div class="form-group row">
+                            <div class="col-sm-6">
+                                <h6 class="text-white">Posiciones</h6>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                      <div class="input-group-text bg-white">
+                                        <i class="fas fa-users"></i>
+                                      </div>
+                                    </div>
+                                    <select class="custom-select" formControlName="positionId">
+                                        <option 
+                                            *ngFor="let position of PositionList" 
+                                            [ngValue]="position.positionId">
+                                            {{position.fullname}}  ({{position.initial}})
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-6"><br />
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text bg-white">
+                                            <i class="fas fa-tshirt"></i>
+                                        </div>
+                                    </div>
+                                    <input type="number" class="form-control" placeholder="Numero de Dorsal" formControlName="number">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text bg-white">
+                                    <i class="fas fa-file"></i>
+                                </div>
+                            </div>
+                            <div class="custom-file">
+                                <input #fileInput type="file" class="custom-file-input" 
+                                    (change)="onSelectFile($event)"
+                                    accept=".jpg,.png,.jpeg,.mp4,.gif"
+                                >
+                                <label class="custom-file-label" for="customFileLangHTML" data-browse="Elegir perfil">Imagen</label>
+                            </div>
+                        </div>
+                    </div>
     
                     <div class="modal-footer col-sm-auto">
                         <div class="col-sm-auto">
@@ -121,30 +168,33 @@
                     <div class="row">
                         <table class="table table-responsive table-hover">
                             <thead>
+                                <th scope="col">#</th>
                                 <th scope="col">Nombre</th>
                                 <th scope="col">Apellido</th>
                                 <th scope="col">Peso</th>
                                 <th scope="col">Estatura</th>
                                 <th scope="col">Posicion</th>
-                                <th scope="col">Foto Perfil</th>
-                                <th scope="col">Descripcion</th>
+                                <th scope="col">Foto Perfil  Descripcion</th>
                                 <th scope="col">Fecha Registro</th>
                                 <th></th>
                                 <th></th>
                             </thead>
                             <tbody>
                                 <tr *ngFor="let player of TeamList">
-                                    <td>{{player.playerId}}</td>
+                                    <td>{{player.number}}</td>
                                     <td>{{player.name}}</td>
                                     <td>{{player.lastname}}</td>
-                                    <td>{{player.weight}}</td>
-                                    <td>{{player.height}}</td>
-                                    <td>{{player.positions.initial}}</td>
-                                    <td>{{player.profile_picture}}</td>
-                                    <td>{{player.description}}</td>
+                                    <td>{{player.weight}} lb</td>
+                                    <td>{{player.height}} cm</td>
+                                    <td>{{player.positions.fullname}} ({{player.positions.initial}})</td>
+                                    <td>
+                                        <button class="btn btn-outline-light" (click)="ShowContentExample(player.playerId)">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </td>
                                     <td>{{player.registration_date | date}}</td>
                                     <td>
-                                        <button class="btn btn-outline-danger" (click)="onDeleteTeam(player.playerId)">
+                                        <button class="btn btn-outline-danger" (click)="onDeleteTeam(player.playerId, player)">
                                             <i class="fas fa-trash-alt"></i>
                                         </button>
                                     </td>
@@ -161,4 +211,31 @@
             </div>
         </div>
     </div><br /><br /><br /><br />
+</div>
+
+<div *ngFor="let player of TeamList">
+    <div class="modal fade" id="PlayerPhoto{{player.playerId}}" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title text-dark" id="staticBackdropLabel">#{{player.number}} - {{player.name}} {{player.lastname}}</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span class="text-dark" aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <div class="row"> 
+                    <div class="col-sm-6">
+                        <img [src]="player.profile_picture_path" class="rounded d-block w-100" alt="..." />
+                    </div>
+                    <div class="col-sm-5">
+                      <p class="text-dark">
+                        {{player.description}}
+                      </p>
+                    </div>
+                  </div>
+            </div>
+          </div>
+        </div>
+    </div>
 </div>

@@ -23,15 +23,15 @@ export class PositionsService {
     return this.http.get<IPositions[]>(this.BASE_URL_API + "/Positions");
   }
 
-  CreatePositions(Positions): Observable<IPositions[]> {
-    return this.http.post<IPositions[]>(this.BASE_URL_API + "/Positions", Positions, this.httpOptions);
+  CreatePositions(Positions): Observable<IPositions> {
+    return this.http.post<IPositions>(this.BASE_URL_API + "/Positions", Positions, this.httpOptions);
   }
 
   DeletePositions(PositionsId: number): Observable<IPositions> {
-    return this.http.delete<IPositions>(this.BASE_URL_API + "/Positions/" + PositionsId );
+    return this.http.delete<IPositions>(this.BASE_URL_API + "/Positions/byId/" + PositionsId );
   }
 
-  EditPositions() {
-
+  EditPositions(PositionsId: number, Positions): Observable<IPositions> {
+    return this.http.put<IPositions>(this.BASE_URL_API + "/Positions/" + PositionsId, Positions, this.httpOptions);
   }
 }

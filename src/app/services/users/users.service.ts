@@ -43,5 +43,4 @@ export class UsersService {
   DeleteUser(userId: number): Observable<IUsers> {
     return this.http.delete<IUsers>(this.BASE_URL_API + "/Authentication/" + userId);
   }
-
 }

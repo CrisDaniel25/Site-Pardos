@@ -23,16 +23,19 @@ export class PlayersService {
     return this.http.get<IPlayers[]>(this.BASE_URL_API + "/Players");
   }
 
-  CreatePlayers(Players): Observable<IPlayers[]> {
-    return this.http.post<IPlayers[]>(this.BASE_URL_API + "/Players", Players, this.httpOptions);
+  CreatePlayers(Players): Observable<IPlayers> {
+    return this.http.post<IPlayers>(this.BASE_URL_API + "/Players", Players, this.httpOptions);
   }
 
   DeletePlayers(PlayersId: number): Observable<IPlayers> {
-    return this.http.delete<IPlayers>(this.BASE_URL_API + "/Players/" + PlayersId );
+    return this.http.delete<IPlayers>(this.BASE_URL_API + "/Players/byId/" + PlayersId );
   }
 
-  EditPlayers() {
-
+  EditPlayers(PlayersId: number, Players) {
+    return this.http.put<IPlayers>(this.BASE_URL_API + "/Players/" + PlayersId, Players, this.httpOptions);
   }
 
+  UploadMultimediaFile(File: FormData) {
+    return this.http.post(this.BASE_URL_API + "/Players/Upload", File);
+  }
 }

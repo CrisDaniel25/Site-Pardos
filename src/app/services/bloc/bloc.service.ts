@@ -23,16 +23,19 @@ export class BlocService {
     return this.http.get<IBloc[]>(this.BASE_URL_API + "/Bloc");
   }
 
-  CreateBloc(Bloc): Observable<IBloc[]> {
-    return this.http.post<IBloc[]>(this.BASE_URL_API + "/Bloc", Bloc, this.httpOptions);
+  CreateBloc(Bloc): Observable<IBloc> {
+    return this.http.post<IBloc>(this.BASE_URL_API + "/Bloc", Bloc, this.httpOptions);
   }
 
   DeleteBloc(BlocId: number): Observable<IBloc> {
-    return this.http.delete<IBloc>(this.BASE_URL_API + "/Bloc/" + BlocId );
+    return this.http.delete<IBloc>(this.BASE_URL_API + "/Bloc/byId/" + BlocId );
   }
 
-  EditBloc() {
-
+  EditBloc(BlocId: number, Bloc): Observable<IBloc> {
+    return this.http.put<IBloc>(this.BASE_URL_API + "/Bloc/" + BlocId, Bloc, this.httpOptions);
   }
 
+  UploadMultimediaFile(File: FormData) {
+    return this.http.post(this.BASE_URL_API + "/Bloc/Upload", File);
+  }
 }

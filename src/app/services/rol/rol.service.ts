@@ -23,16 +23,15 @@ export class RolService {
     return this.http.get<IRol[]>(this.BASE_URL_API + "/Rol");
   }
 
-  CreateRol(Rol): Observable<IRol[]> {
-    return this.http.post<IRol[]>(this.BASE_URL_API + "/Rol", Rol, this.httpOptions);
+  CreateRol(Rol): Observable<IRol> {
+    return this.http.post<IRol>(this.BASE_URL_API + "/Rol", Rol, this.httpOptions);
   }
 
-  DeleteRol(rolId: number): Observable<IRol> {
-    return this.http.delete<IRol>(this.BASE_URL_API + "/Rol/" + rolId );
+  DeleteRol(RolId: number): Observable<IRol> {
+    return this.http.delete<IRol>(this.BASE_URL_API + "/Rol/byId/" + RolId);
   }
 
-  EditRol() {
-
+  EditRol(RolId: number, Rol): Observable<IRol> {
+    return this.http.put<IRol>(this.BASE_URL_API + "/Rol/" + RolId, Rol, this.httpOptions);
   }
-
 }

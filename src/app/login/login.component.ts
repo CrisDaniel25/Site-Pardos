@@ -61,5 +61,4 @@ export class LoginComponent implements OnInit {
       timer: 3500
     });
   }
-
 }
