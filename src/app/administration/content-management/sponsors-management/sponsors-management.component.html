@@ -1,5 +1,5 @@
 <br />
-<div class="container-fluid">
+<div class="container-fluid"><br />
     <h3 class="text-center">PATROCINADORES</h3><hr class="tittle">
     <div class="container"><br />
         <button class="btn btn-outline-light btn-lg" id="back" (click)="BacktoMenu()">
@@ -19,7 +19,7 @@
                                         <i class="fas fa-heading"></i>
                                       </div>
                                     </div>
-                                    <input type="text" class="form-control" placeholder="Compañia" formControlName="company">
+                                    <input type="text" class="form-control" placeholder="Compañía" formControlName="company">
                                 </div>
                             </div>
                         </div>
@@ -35,7 +35,7 @@
                                       </div>
                                     </div>
                                     <div class="custom-file">
-                                        <input #fileInput type="file" class="custom-file-input" 
+                                        <input #fileInput1 type="file" class="custom-file-input" 
                                             (change)="onSelectFile1($event)"
                                             accept=".jpg,.png,.jpeg,.mp4,.gif"
                                         >
@@ -51,9 +51,9 @@
                                         </div>
                                     </div>
                                     <div class="custom-file">
-                                        <input #fileInput type="file" class="custom-file-input" 
+                                        <input #fileInput2 type="file" class="custom-file-input" 
                                             (change)="onSelectFile2($event)"
-                                            accept=".jpg,.png,.jpeg,.mp4,.gif"
+                                            accept=".svg"
                                         >
                                         <label class="custom-file-label text-dark" data-browse="Elegir logo">Imagen</label>
                                     </div>
@@ -63,7 +63,7 @@
                     </div>
 
                     <div class="form-group">
-                        <h5 for="exampleFormControlTextarea1">Contenido</h5>
+                        <h5 for="exampleFormControlTextarea1">Información</h5>
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"
                         formControlName="info"></textarea>
                     </div>
@@ -88,27 +88,22 @@
                     <div class="row">
                         <table class="table table-responsive table-hover">
                             <thead>
-                                <th scope="col">Ver Contenido</th>
+                                <th scope="col">Ver Patrocinador</th>
                                 <th scope="col">Fecha Registro</th>
                                 <th></th>
                                 <th></th>
                             </thead>
                             <tbody>
-                                <tr>
+                                <tr *ngFor="let sponsor of SponsorList">
                                     <td>
-                                        <button class="btn btn-outline-light">
+                                        <button class="btn btn-outline-light" (click)="ShowContentExample(sponsor.sponsorId)">
                                             <i class="fas fa-eye"></i>
                                         </button>
                                     </td>
-                                    <td></td>
+                                    <td>{{sponsor.registration_date | date}}</td>
                                     <td>
-                                        <button class="btn btn-outline-danger">
+                                        <button class="btn btn-outline-danger" (click)="onDeleteSponsor(sponsor.sponsorId, sponsor)">
                                             <i class="fas fa-trash-alt"></i>
-                                        </button>
-                                    </td>
-                                    <td>
-                                        <button class="btn btn-outline-warning">
-                                            <i class="fas fa-pen"></i>
                                         </button>
                                     </td>
                                 </tr>
@@ -121,12 +116,15 @@
     </div><br /><br /><br /><br />
 </div>
 
-<div>
-    <div class="modal fade" id="BlocDetails{{1}}" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div *ngFor="let sponsor of SponsorList">
+    <div class="modal fade" id="SponsorDetail{{sponsor.sponsorId}}" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
           <div class="modal-content">
             <div class="modal-header">
-              <!-- <h5 class="modal-title text-dark" id="staticBackdropLabel">{{bloc.tittle}}</h5> -->
+              <h5 class="modal-title text-dark" id="staticBackdropLabel">
+                <img [src]="sponsor.logo_path" class="rounded d-block w-100" alt="..." width="5%" height="5%" />
+                {{sponsor.company}}
+              </h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span class="text-dark" aria-hidden="true">&times;</span>
               </button>
@@ -134,10 +132,11 @@
             <div class="modal-body">
               <div class="row"> 
                 <div class="col-sm-6">
+                    <img [src]="sponsor.advertising_image_path" class="rounded d-block w-100" alt="..." />
                 </div>
                 <div class="col-sm-5">
                   <p class="text-dark">
-                    <!-- {{bloc.content}} -->
+                    {{sponsor.info}}
                   </p>
                 </div>
               </div>

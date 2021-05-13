@@ -35,7 +35,7 @@ export class SponsorsManagementComponent implements OnInit {
   }
 
   ShowContentExample(Id) {
-    $("#BlocDetails"+Id).modal('show');
+    $("#SponsorDetail"+Id).modal('show');
   }
 
   InitForm() {
@@ -106,7 +106,7 @@ export class SponsorsManagementComponent implements OnInit {
       reader.onload = (event)=> {
         this.logoName = Guid.newGuid() + "-" + file.name.toString().trim().replace(' ','');
         this.logo_path = environment.URL_PATH_SPONSORS_IMAGE + "/" + this.logoName;
-        this.SponsorForm.get('logo_path').setValue(this.image_path);
+        this.SponsorForm.get('logo_path').setValue(this.logo_path);
       }
     }
   }

@@ -6,6 +6,11 @@ button {
     border-radius: 20px;
 }
 
+#info-button {
+    border-radius: 0px;
+    margin-top: -5%;
+}
+
 .container-fluid {
     width: 95%;
     background-color: rgba(0, 0, 0, 0.5);

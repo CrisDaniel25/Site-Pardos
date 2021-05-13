@@ -1,0 +1,73 @@
+<br />
+<div class="container-fluid"><br />
+    <h3 class="text-center">RECLUTAMIENTO</h3><hr class="tittle">
+    <div class="container"><br />
+        <button class="btn btn-outline-light btn-lg" id="back" (click)="BacktoMenu()">
+            <i class="fas fa-chevron-circle-left"></i>&nbsp;
+            Volver
+        </button>
+        <div class="row d-flex justify-content-center">
+            
+            <table class="table table-responsive table-hover">
+                <thead>
+                    <th scope="col">Nombre Completo</th>
+                    <th scope="col">Ver solicitantes detalladamente</th>
+                    <th scope="col">Certificado Buena Conducta</th>
+                    <th scope="col">Posición por la que se postula</th>
+                    <th scope="col">Fecha de Envio</th>
+                    <th></th>
+                    <th></th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let recruitment of RecruitmentList">
+                        <td>{{recruitment.name}} {{recruitment.lastname}}</td>
+                        <td>
+                            <button class="btn btn-outline-light btn-lg btn-block" (click)="ShowContentExample(recruitment)">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </td>
+                        <td>
+                            <a class="h3 d-flex justify-content-center" [href]="recruitment.certificate_path" target="_blank">
+                                <i class="fas fa-file-pdf"></i>
+                            </a>
+                        </td>
+                        <td>{{recruitment.positions.fullname}} ({{recruitment.positions.initial}})</td>
+                        <td>{{recruitment.registration_date | date}}</td>
+                </tbody>
+            </table>
+        </div>
+    </div><br /><br /><br /><br />
+</div>
+
+<div *ngFor="let recruitment of RecruitmentList">
+    <div class="modal fade" id="BlocDetails{{recruitment.recruitmentId}}" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title text-dark" id="staticBackdropLabel">
+                    <i class="fas fa-user-plus"></i>&nbsp;
+                    {{recruitment.name}} {{recruitment.lastname}}
+              </h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span class="text-dark" aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <!-- <h5 class="text-center text-dark" *ngIf="!Person">La verificacion de la cedula de esta persona esta dudosa</h5> -->
+                <div class="row" *ngIf="Person">
+                    <img [src]="Person.foto" class="rounded mx-auto d-block" alt="...">
+                </div><hr />
+                <div class="row">
+                    <ul class="list-group">
+                        <li class="list-group-item text-dark">Email: {{recruitment.email}}</li>
+                        <li class="list-group-item text-dark">Numero Telefonico: {{recruitment.phone_number}}</li>
+                        <li class="list-group-item text-dark">Numero de Cedula: {{recruitment.identification_card}}</li>
+                        <li class="list-group-item text-dark" *ngIf="Person">Fecha de Nacimiento: {{Person.FechaNacimiento | date}}</li>
+                        <li class="list-group-item text-dark" *ngIf="Person">Lugar de Nacimiento: {{Person.LugarNacimiento}}</li>
+                    </ul>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>

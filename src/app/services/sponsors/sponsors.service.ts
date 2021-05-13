@@ -23,6 +23,10 @@ export class SponsorsService {
     return this.http.get<ISponsors[]>(this.BASE_URL_API + "/Sponsors");
   }
 
+  GetRecentSponsor(): Observable<ISponsors[]> {
+    return this.http.get<ISponsors[]>(this.BASE_URL_API + "/Sponsors/Recent/Sponsors");
+  }
+
   CreateSponsor(Sponsor): Observable<ISponsors> {
     return this.http.post<ISponsors>(this.BASE_URL_API + "/Sponsors", Sponsor, this.httpOptions);
   }

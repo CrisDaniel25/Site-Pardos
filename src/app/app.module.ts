@@ -22,6 +22,7 @@ import { LoginComponent } from './login/login.component';
 
 import { UsersService } from '../app/services/users/users.service';
 import { RequirementsComponent } from './requirements/requirements.component';
+import { RecruitmentService } from './services/recruitment/recruitment.service';
 
 export function tokenGetter() {
   return localStorage.getItem("jwt");
@@ -50,7 +51,10 @@ export function tokenGetter() {
     MDBBootstrapModule.forRoot(),
     JwtModule.forRoot({ config: { tokenGetter: tokenGetter } })
   ],
-  providers: [UsersService],
+  providers: [
+    UsersService,
+    RecruitmentService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

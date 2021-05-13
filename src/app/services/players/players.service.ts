@@ -23,6 +23,10 @@ export class PlayersService {
     return this.http.get<IPlayers[]>(this.BASE_URL_API + "/Players");
   }
 
+  GetPlayer(PlayersId): Observable<IPlayers> {
+    return this.http.get<IPlayers>(this.BASE_URL_API + "/Players/byId/" + PlayersId );
+  }
+
   CreatePlayers(Players): Observable<IPlayers> {
     return this.http.post<IPlayers>(this.BASE_URL_API + "/Players", Players, this.httpOptions);
   }

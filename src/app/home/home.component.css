@@ -39,9 +39,8 @@ hr {
 }
 
 .column {
-    float: left;
-    width: 35%;
-    padding: 0 10px;
+    width: 80%;
+    /* padding: 0 10px; */
 }
 
 .row {margin: 0 -5px;}
@@ -53,6 +52,7 @@ hr {
 }
   
 .card {
+    width: 100%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     padding: 16px;
     text-align: center;

@@ -29,8 +29,11 @@ export class AdministrationComponent implements OnInit {
     this.route.navigate(['administration/sponsors']);
   }
 
+  GotoRecruitmentManagement() {
+    this.route.navigate(['administration/recruitment']);
+  }
+
   GotoUserManagement() {
     this.route.navigate(['administration/user']);
   }
-
 }

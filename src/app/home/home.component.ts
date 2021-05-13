@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IBloc } from '../interfaces/bloc/bloc';
+import { BlocService } from '../services/bloc/bloc.service';
 declare var $ : any;
 
 @Component({
@@ -8,35 +10,35 @@ declare var $ : any;
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  FullList: IBloc[];
+  RecentList: IBloc[];
+
+  constructor(private service: BlocService) { }
 
   ngOnInit(): void {
+    this.onGetMultiplesBloc();
   }
 
-  scrollToInfo(element: any) {
-    element.scrollIntoView({ behavior: "smooth" });
+  ShowContentExample(Id) {
+    $("#Bloc"+Id).modal('show');
   }
 
+  onGetMultiplesBloc() {
+    this.service.GetBloc()
+    .subscribe(response => {
+      this.FullList = response;
+    });
+    this.service.GetRecentBloc()
+    .subscribe(response => {
+      this.RecentList = response;
+    });
+  }
+
+  shiftLeft() {
+    $('#FullBloc').carousel('prev');
+  }
+
+  shiftRight() {
+    $('#FullBloc').carousel('next');
+  }
 }
-
-$('#recipeCarousel').carousel({
-  interval: 10000
-})
-
-$('.carousel .carousel-item').each(function(){
-    var minPerSlide = 3;
-    var next = $(this).next();
-    if (!next.length) {
-    next = $(this).siblings(':first');
-    }
-    next.children(':first-child').clone().appendTo($(this));
-    
-    for (var i=0;i<minPerSlide;i++) {
-        next=next.next();
-        if (!next.length) {
-        	next = $(this).siblings(':first');
-      	}
-        
-        next.children(':first-child').clone().appendTo($(this));
-      }
-});

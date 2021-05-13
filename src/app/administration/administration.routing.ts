@@ -4,6 +4,7 @@ import { InfoManagementComponent } from './content-management/info-management/in
 import { TeamManagementComponent } from './content-management/team-management/team-management.component';
 import { SponsorsManagementComponent } from './content-management/sponsors-management/sponsors-management.component';
 import { UserManagementComponent } from './user-management/user-management.component';
+import { RecruitmentManagementComponent } from './recruitment-management/recruitment-management.component';
 
 export const AdministrationRoutingModule: Routes = [
   {
@@ -25,5 +26,9 @@ export const AdministrationRoutingModule: Routes = [
   {
     path: "sponsors",
     component: SponsorsManagementComponent
+  },
+  {
+    path: "recruitment",
+    component: RecruitmentManagementComponent
   }
 ];

@@ -10,6 +10,7 @@ import { InfoManagementComponent } from './content-management/info-management/in
 import { TeamManagementComponent } from './content-management/team-management/team-management.component';
 import { SponsorsManagementComponent } from './content-management/sponsors-management/sponsors-management.component';
 import { UserManagementComponent } from './user-management/user-management.component';
+import { RecruitmentManagementComponent } from './recruitment-management/recruitment-management.component';
 
 
 @NgModule({
@@ -18,7 +19,7 @@ import { UserManagementComponent } from './user-management/user-management.compo
     InfoManagementComponent, 
     TeamManagementComponent, 
     SponsorsManagementComponent, 
-    UserManagementComponent
+    UserManagementComponent, RecruitmentManagementComponent
   ],
   imports: [
     CommonModule,

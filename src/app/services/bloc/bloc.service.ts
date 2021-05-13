@@ -23,6 +23,10 @@ export class BlocService {
     return this.http.get<IBloc[]>(this.BASE_URL_API + "/Bloc");
   }
 
+  GetRecentBloc(): Observable<IBloc[]> {
+    return this.http.get<IBloc[]>(this.BASE_URL_API + "/Bloc/Recent/Articles");
+  }
+
   CreateBloc(Bloc): Observable<IBloc> {
     return this.http.post<IBloc>(this.BASE_URL_API + "/Bloc", Bloc, this.httpOptions);
   }

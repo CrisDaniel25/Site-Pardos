@@ -1,5 +1,5 @@
 <br />
-<div class="container-fluid">
+<div class="container-fluid"><br />
   <h3 class="text-center">EQUIPO</h3><hr class="tittle">
   <p class="text-center">
     Construir la oportunidad para los niños
@@ -7,41 +7,85 @@
     generaciones de poder jugar fútbol
     Americano.
   </p>
-  <div class="container float-none">
+  <div class="container">
     <div class="row">
-        <button class="btn btn-outline-light" (click)="shiftLeft()">
+        <button class="btn btn-outline-light" (click)="shiftLeft()" *ngIf="List.length > 0">
           <i class="fas fa-arrow-alt-circle-left"></i>
         </button>
  
         <div class="cards-wrapper">
             <ul class="cards__container">
-                <li class="box" style="background-color:rgb(217, 89, 0)">Capitan Jugador 1</li>
-                <li class="box">Jugador 2</li>
-                <li class="box">Jugador 3</li>
-                <li class="box">Jugador 4</li>
-                <li class="box">Jugador 5</li>
-                <li class="box box--hide">Jugador 6</li>
-                <li class="box box--hide">Jugador 7</li>
-                <li class="box box--hide">Jugador 8</li>
-                <li class="box box--hide">Jugador 9</li>
-                <li class="box box--hide">Jugador 10</li>
-                <li class="box box--hide">Jugador 11</li>
-                <li class="box box--hide">Jugador 12</li>
+                <li *ngFor="let player of List; let i = index" [ngStyle]="{'background-color': player.captain == true ? 'rgb(217, 89, 0)' : 'rgb(51, 51, 51)'}"
+                  [ngClass]="i > 4 ? 'box box--hide' : 'box'">
+                  <div class="container">
+                    <div class="d-flex justify-content-center">
+                      <h3>#{{player.number}}</h3>
+                    </div>
+                    <div div class="row">
+                      <img [src]="player.profile_picture_path" width="100px" height="100px" class="rounded mx-auto d-block" />
+                    </div><hr />
+                    <ul class="list-unstyled">
+                      <li class="d-flex justify-content-center">
+                        <small>{{player.positions.fullname}} ({{player.positions.initial}})</small>
+                      </li>
+                      <li class="d-flex justify-content-center"><small>{{player.weight}} lb</small></li>
+                      <li class="d-flex justify-content-center"><small>{{player.weight}} lb</small></li>
+                      <li class="d-flex justify-content-center"><small>{{GetSeason(player.registration_date)}}</small></li><hr />
+                      <li class="d-flex justify-content-center">
+                        <button class="btn btn-outline-light btn-sm" id="info-button"
+                        (click)="ShowContentExample(player.playerId)">
+                          saber más...
+                        </button>
+                      </li>
+                    </ul>          
+                  </div>                 
+                </li>
             </ul>
         </div>      
 
-        <button class="btn btn-outline-light" (click)="shiftRight()">
+        <button class="btn btn-outline-light" (click)="shiftRight()" *ngIf="List.length > 0">
           <i class="fas fa-arrow-alt-circle-right"></i>
         </button>
 
     </div>
   </div><hr class="bottom" />
-    <h3 class="text-center">EQUIPO</h3>
-    <h6 class="text-center">EQUIPO</h6>
-    <p class="text-center">
-      Construir la oportunidad para los niños
-      y jóvenes de ésta y de las próximas
-      generaciones de poder jugar fútbol
-      Americano.
-    </p><br /><br />
+  <div id="carouselDescription" class="carousel slide" data-touch="false" data-interval="false" *ngIf="List.length > 0">
+    <div class="carousel-inner">
+      <div class="carousel-item" *ngFor="let player of List; let i = index" 
+        [ngClass]="i === 2 ? 'carousel-item active' : 'carousel-item'">
+        <h3 class="text-center">{{player.name}} {{player.lastname}}</h3>
+        <h6 class="text-center">{{player.positions.fullname}} ({{player.positions.initial}})</h6>
+        <p class="text-center">
+        {{player.description}}
+        </p><br /><br />      
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngFor="let player of List">
+  <div class="modal fade" id="PlayerPhoto{{player.playerId}}" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-dark" id="staticBackdropLabel">#{{player.number}} - {{player.name}} {{player.lastname}} - {{player.positions.fullname}} ({{player.positions.initial}})</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span class="text-dark" aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+              <div class="row"> 
+                  <div class="col-sm-6">
+                      <img [src]="player.profile_picture_path" class="rounded d-block w-100" alt="..." />
+                  </div>
+                  <div class="col-sm-5">
+                    <p class="text-dark">
+                      {{player.description}}
+                    </p>
+                  </div>
+                </div>
+          </div>
+        </div>
+      </div>
+  </div>
 </div>
