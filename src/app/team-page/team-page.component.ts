@@ -32,13 +32,19 @@ export class TeamPageComponent implements OnInit {
   GetSeason(date) {
     var entry_date = new Date(date);
     var today = new Date();
-    var final_date = today.getFullYear() - entry_date.getFullYear();
+    var displayed_date = today.getFullYear() - entry_date.getFullYear();
 
-    if (final_date == 0) {
+    if (displayed_date == 0) {
       return 'Rookie'
     }
 
-    return final_date + ' temporada';
+    return displayed_date + ' temporada';
+  }
+
+  GetHeight(height) {
+    var number_height = height / 30.48;
+    var displayed_height =  number_height.toFixed(1).replace('.','’');
+    return displayed_height;
   }
 
   shiftLeft() {
